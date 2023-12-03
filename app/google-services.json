@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "270156296187",
+    "firebase_url": "https://appetech-smart-cafeteria-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "appetech-smart-cafeteria",
+    "storage_bucket": "appetech-smart-cafeteria.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:270156296187:android:da27c7df2686f3f548655e",
+        "android_client_info": {
+          "package_name": "com.example.appetech_smart_cafeteria"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCCLsAv1esnMgNPWhE6nrWd_35ZqYlwKZA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
