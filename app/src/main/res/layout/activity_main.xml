@@ -24,7 +24,7 @@
         android:layout_marginTop="10dp"
         android:minWidth="48dp"
         android:minHeight="48dp"
-        android:hint="@string/fui_email_link_different_anonymous_user_header" />
+        android:hint="Username" />
 
     <EditText
         android:id="@+id/editTextEmail"
@@ -35,7 +35,7 @@
         android:layout_marginTop="10dp"
         android:minWidth="48dp"
         android:minHeight="48dp"
-        android:hint="@string/fui_email_hint"/>
+        android:hint="Email"/>
 
     <EditText
         android:id="@+id/editTextPassword"
@@ -47,7 +47,7 @@
         android:inputType="textPassword"
         android:minWidth="48dp"
         android:minHeight="48dp"
-        android:hint="@string/fui_password_hint"/>
+        android:hint="Password"/>
 
     <TextView
         android:id="@+id/goToLogin"
