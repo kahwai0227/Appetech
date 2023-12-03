@@ -7,6 +7,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.content.Intent;
+import com.example.appetech_smart_cafeteria.User;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -62,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
 
                     // Show a toast message indicating successful registration
                     Toast.makeText(MainActivity.this, "Registration successful", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                    Intent intent = new Intent(MainActivity.this, MainActivity.class);
                     startActivity(intent);
                     finish();
                 }
@@ -72,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
         goToLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                Intent intent = new Intent(MainActivity.this, MainActivity.class);
                 startActivity(intent);
                 finish();
             }
