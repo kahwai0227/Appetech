@@ -12,14 +12,41 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Appetech_smart_cafeteria"
         tools:targetApi="31">
+
         <activity
-            android:name=".ArkedList"
+            android:name=".RegistrationPage"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name" />
+        <activity
+            android:name=".ArkedList"
+            android:label="@string/app_name" />
+        <activity
+            android:name=".Delete_R"
+            android:label="@string/app_name" />
+        <activity
+            android:name=".Delete_R_success"
+            android:label="@string/app_name" />
+        <activity
+            android:name=".Q_Sure"
+            android:label="@string/app_name" />
+        <activity
+            android:name=".ReservationDetails"
+            android:label="@string/app_name" />
+        <activity
+            android:name=".ReservationForm"
+            android:label="@string/app_name" />
+        <activity
+            android:name=".success_book"
+            android:label="@string/app_name" />
+
     </application>
 
 </manifest>
