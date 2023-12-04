@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ReservationDetails">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Reservation Details"
+        android:textColor="@color/black"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="55dp"
+        android:typeface="serif"/>
+
+    <TextView
+        android:id="@+id/textViewName"
+        android:layout_width="wrap_content"
+        android:layout_height="350dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="130dp"
+        android:text="   Name \n\n   Contact  \n\n   Email \n\n   Arked \n\n   Table \n\n   TIme \n\n   Status"
+        android:background="@drawable/bg_grey"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:typeface="serif"
+        android:gravity="center_vertical"/>
+
+    <TextView
+        android:layout_width="250dp"
+        android:layout_height="50.5dp"
+        android:text="-"
+        android:background="@drawable/bg_lightgrey"
+        android:textColor="@color/white"
+        android:textSize="15dp"
+        android:layout_marginTop="130dp"
+        android:layout_marginLeft="130dp"
+        android:gravity="center"
+        android:typeface="serif"/>
+
+    <TextView
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:text="-"
+        android:background="@drawable/bg_lightgrey"
+        android:textColor="@color/white"
+        android:textSize="15dp"
+        android:layout_marginTop="180dp"
+        android:layout_marginLeft="130dp"
+        android:gravity="center"
+        android:typeface="serif"/>
+
+    <TextView
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:text="-"
+        android:background="@drawable/bg_lightgrey"
+        android:textColor="@color/white"
+        android:textSize="15dp"
+        android:layout_marginTop="230dp"
+        android:layout_marginLeft="130dp"
+        android:gravity="center"
+        android:typeface="serif"/>
+
+    <TextView
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:text="-"
+        android:background="@drawable/bg_lightgrey"
+        android:textColor="@color/white"
+        android:textSize="15dp"
+        android:layout_marginTop="280dp"
+        android:layout_marginLeft="130dp"
+        android:gravity="center"
+        android:typeface="serif"/>
+    <TextView
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:text="-"
+        android:background="@drawable/bg_lightgrey"
+        android:textColor="@color/white"
+        android:textSize="15dp"
+        android:layout_marginTop="330dp"
+        android:layout_marginLeft="130dp"
+        android:gravity="center"
+        android:typeface="serif"/>
+
+    <TextView
+        android:layout_width="250dp"
+        android:layout_height="50.5dp"
+        android:text="-"
+        android:background="@drawable/bg_lightgrey"
+        android:textColor="@color/white"
+        android:textSize="15dp"
+        android:layout_marginTop="379.5dp"
+        android:layout_marginLeft="130dp"
+        android:gravity="center"
+        android:typeface="serif"/>
+
+    <TextView
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:text="-"
+        android:background="@drawable/bg_lightgrey"
+        android:textColor="@color/white"
+        android:textSize="15dp"
+        android:layout_marginTop="430dp"
+        android:layout_marginLeft="130dp"
+        android:gravity="center"
+        android:typeface="serif"/>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="130dp"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/back1"
+            android:layout_width="130dp"
+            android:layout_height="50dp"
+            android:text="Back"
+            android:layout_marginTop="450dp"
+            android:layout_marginLeft="0dp"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:background="@drawable/button_green"
+            android:fontFamily="monospace"/>
+        <Button
+            android:id="@+id/del1"
+            android:layout_width="130dp"
+            android:layout_height="50dp"
+            android:text="Delete"
+            android:layout_marginTop="450dp"
+            android:layout_marginLeft="180dp"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:background="@drawable/button_red"
+            android:fontFamily="monospace"/>
+    </RelativeLayout>
+</RelativeLayout>

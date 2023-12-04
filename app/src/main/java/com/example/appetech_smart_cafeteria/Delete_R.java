@@ -7,31 +7,33 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class MainActivity extends AppCompatActivity {
+public class Delete_R extends AppCompatActivity {
 
-    private Button buttonYR;
-    private Button buttonTL;
+    private Button buttonC;
+    private Button buttonY;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_delete_r);
 
-        buttonYR=findViewById(R.id.yr);
-        buttonYR.setOnClickListener(new View.OnClickListener() {
+        buttonC=findViewById(R.id.ccl);
+        buttonC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, ReservationDetails.class);
+                Intent intent = new Intent(Delete_R.this, ReservationDetails.class);
                 startActivity(intent);
                 finish();
             }
         });
 
-        buttonTL=findViewById(R.id.tl);
-        buttonTL.setOnClickListener(new View.OnClickListener() {
+        buttonY=findViewById(R.id.yes);
+        buttonY.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, ArkedList.class);
+                Intent intent = new Intent(Delete_R.this,Delete_R_success.class);
                 startActivity(intent);
+                finish();
             }
         });
     }

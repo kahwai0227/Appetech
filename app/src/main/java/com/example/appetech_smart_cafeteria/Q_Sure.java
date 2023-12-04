@@ -7,31 +7,33 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class MainActivity extends AppCompatActivity {
+public class Q_Sure extends AppCompatActivity {
 
-    private Button buttonYR;
-    private Button buttonTL;
+    private Button buttonB;
+    private Button buttonS;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_qsure);
 
-        buttonYR=findViewById(R.id.yr);
-        buttonYR.setOnClickListener(new View.OnClickListener() {
+        buttonB=findViewById(R.id.back4);
+        buttonB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, ReservationDetails.class);
+                Intent intent = new Intent(Q_Sure.this, ReservationForm.class);
                 startActivity(intent);
                 finish();
             }
         });
 
-        buttonTL=findViewById(R.id.tl);
-        buttonTL.setOnClickListener(new View.OnClickListener() {
+        buttonS=findViewById(R.id.submit_2);
+        buttonS.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, ArkedList.class);
+                Intent intent = new Intent(Q_Sure.this, success_book.class);
                 startActivity(intent);
+                finish();
             }
         });
     }
