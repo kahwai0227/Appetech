@@ -7,30 +7,29 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class MainActivity extends AppCompatActivity {
+public class ArkedList extends AppCompatActivity {
 
-    private Button buttonYR;
-    private Button buttonTL;
+    private Button buttonM;
+    private Button buttonC;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_arked_list);
 
-        buttonYR=findViewById(R.id.yr);
-        buttonYR.setOnClickListener(new View.OnClickListener() {
+        buttonM = findViewById(R.id.meranti);
+        buttonM.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, ReservationDetails.class);
+                Intent intent = new Intent(ArkedList.this,ReservationForm.class);
                 startActivity(intent);
-                finish();
             }
         });
 
-        buttonTL=findViewById(R.id.tl);
-        buttonTL.setOnClickListener(new View.OnClickListener() {
+        buttonC = findViewById(R.id.cenggal);
+        buttonC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, ArkedList.class);
+                Intent intent = new Intent(ArkedList.this,ReservationForm.class);
                 startActivity(intent);
             }
         });

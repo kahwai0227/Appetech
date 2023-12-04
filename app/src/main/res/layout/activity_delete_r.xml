@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Delete_R">
+
+    <TextView
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:text="Table 1"
+        android:background="@drawable/button_blue"
+        android:textColor="@color/white"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:layout_marginTop="120dp"
+        android:layout_marginLeft="20dp"
+        android:gravity="center"
+        android:typeface="serif"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="60dp"
+        android:layout_marginRight="60dp"
+        android:layout_marginTop="250dp"
+        android:text="\n Are you sure you want to DELETE your reservation?\n"
+        android:background="@drawable/bg_lightred"
+        android:textColor="@color/black"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:typeface="serif"
+        android:gravity="center_horizontal"/>
+
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="130dp"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/ccl"
+            android:layout_width="130dp"
+            android:layout_height="50dp"
+            android:text="Cancel"
+            android:layout_marginTop="450dp"
+            android:layout_marginLeft="0dp"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:background="@drawable/button_red"
+            android:fontFamily="monospace"/>
+        <Button
+            android:id="@+id/yes"
+            android:layout_width="130dp"
+            android:layout_height="50dp"
+            android:text="Yes"
+            android:layout_marginTop="450dp"
+            android:layout_marginLeft="180dp"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:background="@drawable/button_green"
+            android:fontFamily="monospace"/>
+    </RelativeLayout>
+
+</RelativeLayout>

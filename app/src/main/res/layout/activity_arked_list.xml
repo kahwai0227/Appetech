@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@drawable/cafeteria_bg"
-    tools:context=".MainActivity">
+    tools:context=".ArkedList">
 
     <TextView
         android:layout_width="wrap_content"
@@ -36,20 +36,20 @@
         android:layout_marginTop="130dp"
         android:gravity="center">
         <Button
-            android:id="@+id/yr"
+            android:id="@+id/meranti"
             android:layout_width="250dp"
             android:layout_height="60dp"
-            android:text="Your reservation"
+            android:text="Arked Meranti"
             android:textSize="20sp"
             android:textColor="@color/white"
-            android:background="@drawable/button_purple"
+            android:background="@drawable/button_blue"
             android:textStyle="bold"
             android:fontFamily="monospace"/>
         <Button
-            android:id="@+id/tl"
+            android:id="@+id/cenggal"
             android:layout_width="250dp"
             android:layout_height="60dp"
-            android:text="Table List"
+            android:text="Arked Cenggal"
             android:layout_marginTop="50dp"
             android:textSize="20sp"
             android:textColor="@color/white"
