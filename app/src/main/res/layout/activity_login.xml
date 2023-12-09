@@ -3,16 +3,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RegistrationPage">
+    tools:context=".LoginActivity">
 
     <TextView
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:id="@+id/LoginText"
-        android:padding="10dp"
-        android:background="@color/purple_200"
-        android:text="Registration Page"
+        android:text="Login Page"
         android:textSize="30dp"
+        android:background="@color/purple_200"
+        android:padding="10dp"
         android:textStyle="bold"
         android:gravity="center"
         android:layout_centerHorizontal="true"
@@ -22,7 +21,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/WelcomeText"
+        android:id="@id/WelcomeText"
         android:text="Welcome to Appetech"
         android:textSize="30dp"
         android:textStyle="bold"
@@ -54,7 +53,7 @@
         android:hint="Password"/>
 
     <TextView
-        android:id="@+id/goToLogin"
+        android:id="@+id/goToRegister"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
@@ -66,15 +65,15 @@
         android:minWidth="48dp"
         android:minHeight="48dp"
         android:gravity="center"
-        android:text="Already have an account?"
+        android:text="Don't have an account?"
         />
 
     <Button
-        android:id="@+id/buttonRegister"
+        android:id="@+id/buttonLogin"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_below="@id/goToLogin"
+        android:layout_below="@id/goToRegister"
         android:layout_marginTop="10dp"
-        android:text="Register" />
+        android:text="Login" />
 </RelativeLayout>
