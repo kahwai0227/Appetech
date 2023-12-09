@@ -6,25 +6,29 @@
     tools:context=".RegistrationPage">
 
     <TextView
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/LoginText"
+        android:padding="10dp"
+        android:background="@color/purple_200"
+        android:text="Registration Page"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@id/WelcomeText"
+        android:layout_margin="10dp" />
+
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:id="@+id/WelcomeText"
         android:text="Welcome to Appetech"
         android:textSize="30dp"
         android:textStyle="bold"
         android:layout_centerHorizontal="true"
-        android:layout_above="@id/editTextUsername"
-        android:layout_margin="10dp" />
-
-    <EditText
-        android:id="@+id/editTextUsername"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
         android:layout_above="@id/editTextEmail"
-        android:layout_marginTop="10dp"
-        android:minWidth="48dp"
-        android:minHeight="48dp"
-        android:hint="Username" />
+        android:layout_margin="10dp" />
 
     <EditText
         android:id="@+id/editTextEmail"
