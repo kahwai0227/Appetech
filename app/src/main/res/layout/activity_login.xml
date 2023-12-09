@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity">
+
+    <TextView
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="Login Page"
+        android:textSize="30dp"
+        android:background="@color/purple_200"
+        android:padding="10dp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@id/WelcomeText"
+        android:layout_margin="10dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@id/WelcomeText"
+        android:text="Welcome to Appetech"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@id/editTextEmail"
+        android:layout_margin="10dp" />
+
+    <EditText
+        android:id="@+id/editTextEmail"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="10dp"
+        android:minWidth="48dp"
+        android:minHeight="48dp"
+        android:hint="Email"/>
+
+    <EditText
+        android:id="@+id/editTextPassword"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/editTextEmail"
+        android:layout_marginTop="10dp"
+        android:inputType="textPassword"
+        android:minWidth="48dp"
+        android:minHeight="48dp"
+        android:hint="Password"/>
+
+    <TextView
+        android:id="@+id/goToRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_below="@id/editTextPassword"
+        android:layout_marginTop="10dp"
+        android:clickable="true"
+        android:textSize="16dp"
+        android:minWidth="48dp"
+        android:minHeight="48dp"
+        android:gravity="center"
+        android:text="Don't have an account?"
+        />
+
+    <Button
+        android:id="@+id/buttonLogin"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/goToRegister"
+        android:layout_marginTop="10dp"
+        android:text="Login" />
+</RelativeLayout>
