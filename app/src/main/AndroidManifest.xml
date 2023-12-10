@@ -17,7 +17,7 @@
             android:label="@string/app_name" />
 
         <activity
-            android:name=".RegistrationPage"
+            android:name=".StudentRegister"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
