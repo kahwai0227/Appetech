@@ -105,7 +105,7 @@ public class StudentRegister extends AppCompatActivity {
                                 } else {
                                     // If sign in fails, display a message to the user.
                                     Log.w(TAG, "createUserWithEmail:failure", task.getException());
-                                    Toast.makeText(StudentRegister.this, "Authentication failed.", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(StudentRegister.this, "Auth fail:" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                                     updateUI(null);
                                 }
                             }
@@ -135,9 +135,9 @@ public class StudentRegister extends AppCompatActivity {
     private void updateUI(User user) {
         if(user != null){
             startActivity(new Intent(StudentRegister.this, LoginActivity.class));
+            finish();
         }
         else{
-            startActivity(new Intent(StudentRegister.this, StudentRegister.class));
         }
     }
 
