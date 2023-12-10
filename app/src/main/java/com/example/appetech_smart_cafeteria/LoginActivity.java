@@ -30,6 +30,16 @@ public class LoginActivity extends AppCompatActivity {
     private Button loginBtn;
 
     @Override
+    protected  void onStart(){
+        super.onStart();
+        FirebaseUser user = mAuth.getCurrentUser();
+        if(user == null){
+            startActivity(new Intent(LoginActivity.this, LoginActivity.class));
+            finish();
+        }
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
