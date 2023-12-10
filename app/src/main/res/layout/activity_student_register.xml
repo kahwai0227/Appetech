@@ -1,65 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".RegistrationPage">
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    tools:context=".StudentRegister"
+    android:layout_centerHorizontal="true"
+    android:layout_centerVertical="true"
+    android:layout_gravity="center">
 
     <TextView
+        android:id="@+id/RegistrationText"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:id="@+id/LoginText"
-        android:padding="10dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
         android:background="@color/purple_200"
+        android:gravity="center"
+        android:padding="10dp"
         android:text="Registration Page"
         android:textSize="30dp"
-        android:textStyle="bold"
-        android:gravity="center"
-        android:layout_centerHorizontal="true"
-        android:layout_above="@id/WelcomeText"
-        android:layout_margin="10dp" />
+        android:textStyle="bold" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/WelcomeText"
+        android:layout_below="@+id/RegistrationText"
         android:text="Welcome to Appetech"
         android:textSize="30dp"
         android:textStyle="bold"
         android:layout_centerHorizontal="true"
-        android:layout_above="@id/editTextEmail"
         android:layout_margin="10dp" />
+
+    <EditText
+        android:id="@+id/editTextUsername"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/WelcomeText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:minWidth="48dp"
+        android:minHeight="48dp"
+        android:hint="Username"/>
+
+    <EditText
+        android:id="@+id/editTextID"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editTextUsername"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:minWidth="48dp"
+        android:minHeight="48dp"
+        android:hint="Student ID"/>
 
     <EditText
         android:id="@+id/editTextEmail"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/editTextID"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
         android:layout_marginTop="10dp"
         android:minWidth="48dp"
         android:minHeight="48dp"
+        android:inputType="textEmailAddress"
         android:hint="Email"/>
 
     <EditText
         android:id="@+id/editTextPassword"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/editTextEmail"
         android:layout_centerHorizontal="true"
-        android:layout_below="@id/editTextEmail"
         android:layout_marginTop="10dp"
         android:inputType="textPassword"
         android:minWidth="48dp"
         android:minHeight="48dp"
         android:hint="Password"/>
 
+    <EditText
+        android:id="@+id/editTextConfirmPassword"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editTextPassword"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:inputType="textPassword"
+        android:minWidth="48dp"
+        android:minHeight="48dp"
+        android:hint="Confirm Password"/>
+
     <TextView
         android:id="@+id/goToLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/editTextConfirmPassword"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:layout_below="@id/editTextPassword"
         android:layout_marginTop="10dp"
         android:clickable="true"
         android:textSize="16dp"
@@ -73,8 +112,8 @@
         android:id="@+id/buttonRegister"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/goToLogin"
         android:layout_centerHorizontal="true"
-        android:layout_below="@id/goToLogin"
         android:layout_marginTop="10dp"
         android:text="Register" />
 </RelativeLayout>
