@@ -6,6 +6,7 @@ public class User {
     public String role;
     public String email;
     public String password;
+    public String booking;
 
     public User() {
         // Default constructor required for calls to DataSnapshot.getValue(User.class)
@@ -17,8 +18,27 @@ public class User {
         this.role = role;
         this.email = email;
         this.password = password;
+        this.booking = null;
     }
 
+    //method to annotate user profile
+    public void updateUsername(String username){
+        this.username = username;
+    }
+    public void updateEmail(String email){
+        this.email = email;
+    }
+    public void updatePassword(String password){
+        this.password = password;
+    }
+    public void updateId(String id){
+        this.id = id;
+    }
+    public void addBooking(String booking){
+        this.booking = booking;
+    }
+
+    //method to get userdata
     public String getUsername() {
         return username;
     }
@@ -28,4 +48,5 @@ public class User {
     public String getPassword() {
         return password;
     }
+    public String getBooking() { return booking; }
 }
