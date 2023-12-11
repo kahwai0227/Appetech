@@ -29,7 +29,10 @@ public class ArkedList extends AppCompatActivity {
         buttonC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String location = buttonC.getText().toString();
+
                 Intent intent = new Intent(ArkedList.this,ReservationForm.class);
+                intent.putExtra("location", location);
                 startActivity(intent);
             }
         });
