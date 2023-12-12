@@ -128,10 +128,6 @@ public class StudentRegister extends AppCompatActivity {
         });
     }
 
-    private void createAccount(String email, String password){
-
-    }
-
     private void updateUI(User user) {
         if(user != null){
             startActivity(new Intent(StudentRegister.this, LoginActivity.class));

@@ -7,10 +7,22 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 public class ArkedList extends AppCompatActivity {
 
     private Button buttonM;
     private Button buttonC;
+    @Override
+    protected  void onStart(){
+        super.onStart();
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        if(user == null){
+            startActivity(new Intent(ArkedList.this, LoginActivity.class));
+            finish();
+        }
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,8 +32,11 @@ public class ArkedList extends AppCompatActivity {
         buttonM.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String location = buttonM.getText().toString();
                 Intent intent = new Intent(ArkedList.this,ReservationForm.class);
+                intent.putExtra("location", location);
                 startActivity(intent);
+                finish();
             }
         });
 
@@ -30,10 +45,10 @@ public class ArkedList extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String location = buttonC.getText().toString();
-
                 Intent intent = new Intent(ArkedList.this,ReservationForm.class);
                 intent.putExtra("location", location);
                 startActivity(intent);
+                finish();
             }
         });
     }
