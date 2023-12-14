@@ -22,6 +22,7 @@ public class Delete_R_success extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(Delete_R_success.this, MainActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
     }

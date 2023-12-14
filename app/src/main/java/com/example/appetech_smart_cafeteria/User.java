@@ -6,8 +6,7 @@ public class User {
     public String role;
     public String email;
     public String password;
-    public String booking;
-
+    public Table booking;
     public User() {
         // Default constructor required for calls to DataSnapshot.getValue(User.class)
     }
@@ -34,7 +33,7 @@ public class User {
     public void updateId(String id){
         this.id = id;
     }
-    public void addBooking(String booking){
+    public void addBooking(Table booking){
         this.booking = booking;
     }
 
@@ -48,5 +47,5 @@ public class User {
     public String getPassword() {
         return password;
     }
-    public String getBooking() { return booking; }
+    public Table getBooking() { return booking; }
 }
