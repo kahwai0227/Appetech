@@ -10,20 +10,20 @@
  			- role
  			- bookings
      	- staff
- 		-uid
+ 		- uid
  			- username
  			- email
  			- staff no
  			- role 
 			- cleaning record
--arked
-	-arkeds
-			-tableNo
-				-table occupied
-				-booking status
-				-booking username
-				-booking user contact
-				-booking user email
-				-booking time
-				-location
-				-tableNo		
+- arked
+	- arkeds
+		- tableNo
+			- table occupied
+			- booking status
+			- booking username
+			- booking user contact
+			- booking user email
+			- booking time
+			- location
+			- tableNo		
