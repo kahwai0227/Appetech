@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CustomerRegistration">
+
+    <TextView
+        android:id="@+id/Customer_Welcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="150dp"
+        android:layout_marginBottom="100dp"
+        android:text="Welcome to Appetech's Smart Cafeteria System"
+        android:textSize="15sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toTopOf="@+id/Customer_Name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/Customer_Name"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:hint="Name"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="@+id/Customer_Welcome"
+        app:layout_constraintStart_toStartOf="@+id/Customer_Welcome"
+        app:layout_constraintTop_toBottomOf="@+id/Customer_Welcome" />
+
+    <EditText
+        android:id="@+id/Customer_ID"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_marginTop="5dp"
+        android:ems="10"
+        android:hint="Matric No."
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="@+id/Customer_Name"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/Customer_Name"
+        app:layout_constraintTop_toBottomOf="@+id/Customer_Name" />
+
+    <EditText
+        android:id="@+id/Customer_Phone"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_marginTop="5dp"
+        android:ems="10"
+        android:hint="Phone No."
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="@+id/Customer_ID"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/Customer_ID"
+        app:layout_constraintTop_toBottomOf="@+id/Customer_ID" />
+
+    <EditText
+        android:id="@+id/Customer_Email"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_marginTop="5dp"
+        android:ems="10"
+        android:hint="abc@gmail.com"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="@+id/Customer_Phone"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/Customer_Phone"
+        app:layout_constraintTop_toBottomOf="@+id/Customer_Phone" />
+
+    <Button
+        android:id="@+id/Customer_Registration"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_marginBottom="50dp"
+        android:text="Register"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/Customer_Email"
+        app:layout_constraintHorizontal_bias="0.513"
+        app:layout_constraintStart_toStartOf="@+id/Customer_Email"
+        app:layout_constraintTop_toBottomOf="@+id/Customer_Password"
+        app:layout_constraintVertical_bias="0.989" />
+
+    <EditText
+        android:id="@+id/Customer_Password"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_marginTop="5dp"
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="@+id/Customer_Username"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/Customer_Username"
+        app:layout_constraintTop_toBottomOf="@+id/Customer_Username" />
+
+    <EditText
+        android:id="@+id/Customer_Username"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_marginTop="5dp"
+        android:ems="10"
+        android:hint="User Name"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="@+id/Customer_Email"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/Customer_Email"
+        app:layout_constraintTop_toBottomOf="@+id/Customer_Email" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".StaffFloorplan">
+
+    <ImageView
+        android:id="@+id/Staff_Table_1"
+        android:layout_width="150dp"
+        android:layout_height="200dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="25dp"
+        android:src="@drawable/Table"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/Staff_Table_2"
+        android:layout_width="150dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="25dp"
+        android:src="@drawable/Table"
+        android:text="Table 2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/Staff_Table_1_Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Table 1"
+        tools:layout_editor_absoluteX="57dp"
+        tools:layout_editor_absoluteY="225dp" />
+
+    <Button
+        android:id="@+id/Staff_Table_2_Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:text="Table 2"
+        app:layout_constraintEnd_toEndOf="@+id/Staff_Table_2"
+        app:layout_constraintStart_toStartOf="@+id/Staff_Table_2"
+        app:layout_constraintTop_toBottomOf="@+id/Staff_Table_2" />
+
+    <ImageView
+        android:id="@+id/Staff_Table_3"
+        android:layout_width="150dp"
+        android:layout_height="200dp"
+        android:layout_marginStart="25dp"
+        android:src="@drawable/Table"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="374dp" />
+
+    <ImageView
+        android:id="@+id/Staff_Table_4"
+        android:layout_width="150dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="25dp"
+        android:src="@drawable/Table"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Staff_Table_2_Button" />
+
+    <Button
+        android:id="@+id/Staff_Table_3_Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Table 3"
+        tools:layout_editor_absoluteX="57dp"
+        tools:layout_editor_absoluteY="574dp" />
+
+    <Button
+        android:id="@+id/Staff_Table_4_Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:text="Table 4"
+        app:layout_constraintEnd_toEndOf="@+id/Staff_Table_4"
+        app:layout_constraintStart_toStartOf="@+id/Staff_Table_4"
+        app:layout_constraintTop_toBottomOf="@+id/Staff_Table_4" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -49,6 +49,28 @@
         <activity
             android:name=".success_book"
             android:label="@string/app_name" />
+        <activity
+            android:name=".CustomerFloorplan"
+            android:label="@string/app_name" />
+        <activity
+            android:name=".CustomerLogin"
+            android:label="@string/app_name" />
+        <activity
+            android:name=".CustomerRegistration"
+            android:label="@string/app_name" />
+        <activity
+            android:name=".Customer_or_Staff"
+            android:label="@string/app_name" />
+        <activity
+            android:name=".StaffFloorplan"
+            android:label="@string/app_name" />
+        <activity
+            android:name=".StaffLogin"
+            android:label="@string/app_name" />
+        <activity
+            android:name=".StaffRegistration"
+            android:label="@string/app_name" />
+
     </application>
 
 </manifest>

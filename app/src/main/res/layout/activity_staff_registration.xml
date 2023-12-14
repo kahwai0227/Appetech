@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".StaffRegistration">
+
+    <TextView
+        android:id="@+id/Staff_Welcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="150dp"
+        android:layout_marginBottom="100dp"
+        android:text="Welcome to Appetech's Smart Cafeteria System"
+        android:textSize="15sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toTopOf="@+id/Staff_Name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/Staff_Name"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_marginTop="100dp"
+        android:ems="10"
+        android:hint="Name"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="@+id/Staff_Welcome"
+        app:layout_constraintStart_toStartOf="@+id/Staff_Welcome"
+        app:layout_constraintTop_toBottomOf="@+id/Staff_Welcome" />
+
+    <EditText
+        android:id="@+id/Staff_ID"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_marginTop="5dp"
+        android:ems="10"
+        android:hint="Staff ID"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="@+id/Staff_Name"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/Staff_Name"
+        app:layout_constraintTop_toBottomOf="@+id/Staff_Name" />
+
+    <EditText
+        android:id="@+id/Staff_Phone"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_marginTop="5dp"
+        android:ems="10"
+        android:hint="Phone No."
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="@+id/Staff_ID"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/Staff_ID"
+        app:layout_constraintTop_toBottomOf="@+id/Staff_ID" />
+
+    <EditText
+        android:id="@+id/Staff_Email"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_marginTop="5dp"
+        android:ems="10"
+        android:hint="abc@gmail.com"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="@+id/Staff_Phone"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/Staff_Phone"
+        app:layout_constraintTop_toBottomOf="@+id/Staff_Phone" />
+
+    <Button
+        android:id="@+id/Staff_Registration"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_marginBottom="28dp"
+        android:text="Register"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/Staff_Email"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="@+id/Staff_Email"
+        app:layout_constraintTop_toBottomOf="@+id/Staff_Password" />
+
+    <EditText
+        android:id="@+id/Staff_Password"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_marginTop="5dp"
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="@+id/Staff_Username"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/Staff_Username"
+        app:layout_constraintTop_toBottomOf="@+id/Staff_Username" />
+
+    <EditText
+        android:id="@+id/Staff_Username"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_marginTop="5dp"
+        android:ems="10"
+        android:hint="User Name"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="@+id/Staff_Email"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/Staff_Email"
+        app:layout_constraintTop_toBottomOf="@+id/Staff_Email" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
