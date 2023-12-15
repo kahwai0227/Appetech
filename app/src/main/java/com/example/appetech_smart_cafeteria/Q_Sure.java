@@ -28,7 +28,7 @@ public class Q_Sure extends AppCompatActivity {
     private DatabaseReference databaseReference;
     private Button buttonB;
     private Button buttonS;
-    private TextView name, contact, email, arked, bookTable, bookTime;
+    private TextView textViewTableNo, name, contact, email, arked, bookTable, bookTime;
     User user;
     @Override
     protected  void onStart(){
@@ -45,6 +45,7 @@ public class Q_Sure extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_qsure);
 
+        textViewTableNo = findViewById(R.id.textViewTableNo);
         buttonB=findViewById(R.id.back4);
         name = findViewById(R.id.name);
         contact = findViewById(R.id.contact);
@@ -64,6 +65,7 @@ public class Q_Sure extends AppCompatActivity {
 
             contact.setText(hp);
             bookTable.setText(tableNo);
+            textViewTableNo.setText(tableNo);
             arked.setText(location);
             bookTime.setText(time);
         }
@@ -74,7 +76,7 @@ public class Q_Sure extends AppCompatActivity {
         firebaseDatabase = FirebaseDatabase.getInstance("https://appetech-smart-cafeteria-default-rtdb.asia-southeast1.firebasedatabase.app");
         databaseReference = firebaseDatabase.getReference();
 
-        databaseReference.child("Student").child(uid).addListenerForSingleValueEvent(new ValueEventListener() {
+        databaseReference.child("users").child(uid).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if(snapshot.exists()){
@@ -119,11 +121,12 @@ public class Q_Sure extends AppCompatActivity {
                 table.addTableNo(bookTable.getText().toString().trim());
                 user.addBooking(table);
 
-                databaseReference.child("Student").child(uid).setValue(user);
-                databaseReference.child(arked.getText().toString().trim()).child(bookTable.getText().toString().trim()).setValue(table);
+                databaseReference.child("users").child(uid).setValue(user);
+                databaseReference.child("arked").child(arked.getText().toString().trim()).child(bookTable.getText().toString().trim()).setValue(table);
 
                 Intent intent = new Intent(Q_Sure.this, success_book.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                intent.putExtra("tableNo", bookTable.getText().toString().trim());
                 startActivity(intent);
                 finish();
             }

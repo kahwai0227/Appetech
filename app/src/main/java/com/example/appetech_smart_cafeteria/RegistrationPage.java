@@ -16,14 +16,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.Firebase;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.DatabaseReference;
 
-public class StudentRegister extends AppCompatActivity {
+public class RegistrationPage extends AppCompatActivity {
 
     private EditText editTextUsername, editTextID, editTextEmail, editTextPassword, editTextConfirmPassword;
     private TextView goToLogin;
@@ -37,7 +36,7 @@ public class StudentRegister extends AppCompatActivity {
         super.onStart();
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         if(user != null){
-            startActivity(new Intent(StudentRegister.this, MainActivity.class));
+            startActivity(new Intent(RegistrationPage.this, MainActivity.class));
             finish();
         }
     }
@@ -46,6 +45,15 @@ public class StudentRegister extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student_register);
+
+        Intent intent = getIntent();
+        String role = intent.getStringExtra("role");
+
+        if(role.isEmpty()){
+            Toast.makeText(RegistrationPage.this, "Please choose your role again", Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(RegistrationPage.this, Customer_or_Staff.class));
+            finish();
+        }
 
         editTextUsername = findViewById(R.id.editTextUsername);
         editTextID = findViewById(R.id.editTextID);
@@ -69,7 +77,6 @@ public class StudentRegister extends AppCompatActivity {
                 String email = editTextEmail.getText().toString().trim();
                 String password = editTextPassword.getText().toString().trim();
                 String confirmPassword = editTextConfirmPassword.getText().toString().trim();
-                String role = "Student";
 
                 // Validate input (you can add more validation as needed)
                 if(username.isEmpty()){
@@ -100,12 +107,12 @@ public class StudentRegister extends AppCompatActivity {
                                     FirebaseUser firebaseUser = mAuth.getCurrentUser();
                                     String userid = firebaseUser.getUid();
                                     User user = new User(username, id, role, email, password);
-                                    firebaseReference.child(role).child(userid).setValue(user);
+                                    firebaseReference.child("users").child(userid).setValue(user);
                                     updateUI(user);
                                 } else {
                                     // If sign in fails, display a message to the user.
                                     Log.w(TAG, "createUserWithEmail:failure", task.getException());
-                                    Toast.makeText(StudentRegister.this, "Auth fail:" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(RegistrationPage.this, "Auth fail:" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                                     updateUI(null);
                                 }
                             }
@@ -121,7 +128,7 @@ public class StudentRegister extends AppCompatActivity {
         goToLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(StudentRegister.this, LoginActivity.class);
+                Intent intent = new Intent(RegistrationPage.this, LoginActivity.class);
                 startActivity(intent);
                 finish();
             }
@@ -130,10 +137,12 @@ public class StudentRegister extends AppCompatActivity {
 
     private void updateUI(User user) {
         if(user != null){
-            startActivity(new Intent(StudentRegister.this, LoginActivity.class));
+            startActivity(new Intent(RegistrationPage.this, LoginActivity.class));
             finish();
         }
         else{
+            startActivity(new Intent(RegistrationPage.this, RegistrationPage.class));
+            finish();
         }
     }
 

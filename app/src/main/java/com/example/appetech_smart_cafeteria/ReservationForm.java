@@ -51,6 +51,7 @@ public class ReservationForm extends AppCompatActivity {
         Intent intent = getIntent();
         if (intent != null) {
             location = intent.getStringExtra("location");
+            tableNo = intent.getStringExtra("tableNo");
         }
 
         timebutton = findViewById(R.id.timebutton);
@@ -59,7 +60,7 @@ public class ReservationForm extends AppCompatActivity {
         buttonS = findViewById(R.id.submit_1);
         editTextHp = findViewById(R.id.editTextHp);
 
-        tableNo = textViewTableNo.getText().toString();
+        textViewTableNo.setText(tableNo);
 
         firebaseDatabase = FirebaseDatabase.getInstance("https://appetech-smart-cafeteria-default-rtdb.asia-southeast1.firebasedatabase.app");
         databaseReference = firebaseDatabase.getReference();

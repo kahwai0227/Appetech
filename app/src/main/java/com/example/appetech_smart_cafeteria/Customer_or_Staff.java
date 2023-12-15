@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class Customer_or_Staff extends AppCompatActivity {
 
-    private Button Customer;
+    private Button Student;
     private Button Staff;
 
     @Override
@@ -21,16 +21,20 @@ public class Customer_or_Staff extends AppCompatActivity {
         Staff.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Customer_or_Staff.this, StaffLogin.class);
+                String role = "Staff";
+                Intent intent = new Intent(Customer_or_Staff.this, LoginActivity.class);
+                intent.putExtra("role", role);
                 startActivity(intent);
             }
         });
 
-        Customer=findViewById(R.id.Customer);
-        Customer.setOnClickListener(new View.OnClickListener() {
+        Student=findViewById(R.id.Student);
+        Student.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Customer_or_Staff.this, CustomerLogin.class);
+                String role = "Student";
+                Intent intent = new Intent(Customer_or_Staff.this, RegistrationPage.class);
+                intent.putExtra("role", role);
                 startActivity(intent);
             }
         });

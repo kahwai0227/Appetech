@@ -58,7 +58,7 @@ public class ReservationDetails extends AppCompatActivity {
         bookTable = findViewById(R.id.table);
         bookTime = findViewById(R.id.time);
 
-        databaseReference.child("Student").child(uid).addListenerForSingleValueEvent(new ValueEventListener() {
+        databaseReference.child("users").child(uid).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if(snapshot.exists()){

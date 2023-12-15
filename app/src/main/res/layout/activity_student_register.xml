@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    tools:context=".StudentRegister"
+    tools:context=".RegistrationPage"
     android:layout_centerHorizontal="true"
     android:layout_centerVertical="true"
     android:layout_gravity="center">

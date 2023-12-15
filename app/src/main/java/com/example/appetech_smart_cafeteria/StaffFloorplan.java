@@ -23,7 +23,7 @@ public class StaffFloorplan extends AppCompatActivity {
         Staff_Table_1_Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(StaffFloorplan.this, );
+                Intent intent = new Intent(StaffFloorplan.this, StaffFloorplan.class);
                 startActivity(intent);
             }
         });
@@ -32,7 +32,7 @@ public class StaffFloorplan extends AppCompatActivity {
         Staff_Table_2_Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(StaffFloorplan.this, );
+                Intent intent = new Intent(StaffFloorplan.this, StaffFloorplan.class);
                 startActivity(intent);
             }
         });
@@ -41,7 +41,7 @@ public class StaffFloorplan extends AppCompatActivity {
         Staff_Table_3_Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(StaffFloorplan.this, );
+                Intent intent = new Intent(StaffFloorplan.this, StaffFloorplan.class);
                 startActivity(intent);
             }
         });
@@ -50,7 +50,7 @@ public class StaffFloorplan extends AppCompatActivity {
         Staff_Table_4_Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(StaffFloorplan.this, );
+                Intent intent = new Intent(StaffFloorplan.this, StaffFloorplan.class);
                 startActivity(intent);
             }
         });

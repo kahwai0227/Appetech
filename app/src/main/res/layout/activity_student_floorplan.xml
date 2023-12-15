@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CustomerFloorplan">
+    tools:context=".StudentFloorPlan">
 
     <ImageView
         android:id="@+id/Customer_Table_1"
@@ -12,7 +12,7 @@
         android:layout_height="200dp"
         android:layout_marginStart="25dp"
         android:layout_marginTop="25dp"
-        android:src="@drawable/Table"
+        android:src="@drawable/table"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -22,7 +22,7 @@
         android:layout_height="200dp"
         android:layout_marginTop="25dp"
         android:layout_marginEnd="25dp"
-        android:src="@drawable/Table"
+        android:src="@drawable/table"
         android:text="Table 2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -32,6 +32,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="1dp"
+        android:backgroundTint="@color/green"
         android:text="Table 1"
         app:layout_constraintEnd_toEndOf="@+id/Customer_Table_1"
         app:layout_constraintStart_toStartOf="@+id/Customer_Table_1"
@@ -42,6 +43,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="1dp"
+        android:backgroundTint="@color/green"
         android:text="Table 2"
         app:layout_constraintEnd_toEndOf="@+id/Customer_Table_2"
         app:layout_constraintStart_toStartOf="@+id/Customer_Table_2"
@@ -53,7 +55,7 @@
         android:layout_height="200dp"
         android:layout_marginStart="25dp"
         android:layout_marginTop="100dp"
-        android:src="@drawable/Table"
+        android:src="@drawable/table"
         android:text="Table 1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Customer_Table_1_Button" />
@@ -64,16 +66,16 @@
         android:layout_height="200dp"
         android:layout_marginTop="100dp"
         android:layout_marginEnd="25dp"
-        android:src="@drawable/Table"
+        android:src="@drawable/table"
         android:text="Table 2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Customer_Table_2_Button" />
-
     <Button
         android:id="@+id/Customer_Table_3_Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Table 3"
+        android:backgroundTint="@color/green"
         app:layout_constraintEnd_toEndOf="@+id/Customer_Table_3"
         app:layout_constraintStart_toStartOf="@+id/Customer_Table_3"
         app:layout_constraintTop_toBottomOf="@+id/Customer_Table_3" />
@@ -83,6 +85,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Table 4"
+        android:backgroundTint="@color/green"
         app:layout_constraintEnd_toEndOf="@+id/Customer_Table_4"
         app:layout_constraintStart_toStartOf="@+id/Customer_Table_4"
         app:layout_constraintTop_toBottomOf="@+id/Customer_Table_4" />

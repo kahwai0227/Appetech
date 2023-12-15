@@ -52,7 +52,7 @@ public class Delete_R extends AppCompatActivity {
         buttonY.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                databaseReference.child("Student").child(uid).addListenerForSingleValueEvent(new ValueEventListener() {
+                databaseReference.child("users").child(uid).addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         if(snapshot.exists()){
@@ -66,8 +66,8 @@ public class Delete_R extends AppCompatActivity {
                                 table.removeBooking();
                                 user.addBooking(null);
 
-                                databaseReference.child(user.getRole()).child(uid).setValue(user);
-                                databaseReference.child(location).child(tableNo).setValue(table);
+                                databaseReference.child("users").child(uid).setValue(user);
+                                databaseReference.child("arked").child(location).child(tableNo).setValue(table);
                             }
                         }
                     }

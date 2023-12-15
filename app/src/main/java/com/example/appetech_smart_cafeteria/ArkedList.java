@@ -33,7 +33,7 @@ public class ArkedList extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String location = buttonM.getText().toString();
-                Intent intent = new Intent(ArkedList.this,ReservationForm.class);
+                Intent intent = new Intent(ArkedList.this,StudentFloorPlan.class);
                 intent.putExtra("location", location);
                 startActivity(intent);
                 finish();
@@ -45,7 +45,7 @@ public class ArkedList extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String location = buttonC.getText().toString();
-                Intent intent = new Intent(ArkedList.this,ReservationForm.class);
+                Intent intent = new Intent(ArkedList.this,StudentFloorPlan.class);
                 intent.putExtra("location", location);
                 startActivity(intent);
                 finish();
