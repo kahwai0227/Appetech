@@ -9,7 +9,7 @@
  			- matric no
  			- role
  			- bookings
-     	- staff
+    - staff
  		- uid
  			- username
  			- email
