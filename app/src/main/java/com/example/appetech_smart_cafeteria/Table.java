@@ -12,7 +12,7 @@ public class Table{
     public String location;
     public String bookingTime;
     public String bookingUserContact;
-    public Boolean tableOccupied;
+    public Integer tableOccupied;
 
     public Table(){
     }
@@ -45,7 +45,7 @@ public class Table{
     public String getBookingTime() { return bookingTime; }
     public String getBookingUserContact() { return bookingUserContact; }
     public String getBookingUsername() { return bookingUsername; }
-    public Boolean getTableOccupied() { return tableOccupied; }
+    public Integer getTableOccupied() { return tableOccupied; }
     public void removeBooking(){
         this.bookingUsername = null;
         this.bookingUserContact = null;
