@@ -22,10 +22,14 @@ public class ReservationDetails extends AppCompatActivity {
 
     private Button buttonB;
     private Button buttonD;
+
+    private Button buttonC;
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference databaseReference;
     private FirebaseUser firebaseUser;
     private TextView name, contact, email, arked, bookTable, bookTime;
+    private String location;
+
 
     @Override
     protected  void onStart(){
@@ -71,6 +75,7 @@ public class ReservationDetails extends AppCompatActivity {
                         arked.setText(table.getLocation());
                         bookTable.setText(table.getTableNo());
                         bookTime.setText(table.getBookingTime());
+                        location = table.getLocation();
                     }
                     else{
                         Toast.makeText(ReservationDetails.this, "No current booking", Toast.LENGTH_SHORT).show();
@@ -91,6 +96,7 @@ public class ReservationDetails extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(ReservationDetails.this, MainActivity.class);
+                intent.putExtra("location", location);
                 startActivity(intent);
                 finish();
             }
@@ -101,6 +107,17 @@ public class ReservationDetails extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(ReservationDetails.this, Delete_R.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        buttonC=findViewById(R.id.checkin);
+        buttonC.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ReservationDetails.this, QR.class);
+                intent.putExtra("location", location);
                 startActivity(intent);
                 finish();
             }

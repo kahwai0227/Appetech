@@ -152,6 +152,17 @@
             android:textColor="@color/white"
             android:background="@drawable/button_red"
             android:fontFamily="monospace"/>
+        <Button
+            android:id="@+id/checkin"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:text="Checkin"
+            android:layout_marginTop="550dp"
+            android:layout_marginLeft="80dp"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:background="@drawable/button_red"
+            android:fontFamily="monospace"/>
     </RelativeLayout>
 
     </RelativeLayout>
