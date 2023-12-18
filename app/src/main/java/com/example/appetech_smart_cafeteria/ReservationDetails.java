@@ -6,7 +6,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 
+import androidx.activity.result.ActivityResultLauncher;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -17,13 +20,19 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.ValueEventListener;
+import com.journeyapps.barcodescanner.ScanContract;
+import com.journeyapps.barcodescanner.ScanOptions;
 
 public class ReservationDetails extends AppCompatActivity {
 
     private Button buttonB;
     private Button buttonD;
 
-    private Button buttonC;
+    Button buttonC;
+
+    String location2, tableNo;
+
+
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference databaseReference;
     private FirebaseUser firebaseUser;
@@ -112,15 +121,52 @@ public class ReservationDetails extends AppCompatActivity {
             }
         });
 
-        buttonC=findViewById(R.id.checkin);
-        buttonC.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(ReservationDetails.this, QR.class);
-                intent.putExtra("location", location);
-                startActivity(intent);
-                finish();
-            }
+        buttonC = findViewById(R.id.checkin);
+        buttonC.setOnClickListener(v->
+        {
+            scanCode();
         });
+
     }
+
+    private void scanCode(){
+        ScanOptions options = new ScanOptions();
+        options.setPrompt("Volume up to flash on");
+        options.setBeepEnabled(false);
+        options.setOrientationLocked(true);
+        options.setCaptureActivity(CaptureAct.class);
+        barLauncher.launch(options);
+    }
+    ActivityResultLauncher<ScanOptions>barLauncher = registerForActivityResult(new ScanContract(), result->
+    {
+        if (result.getContents() !=null)
+        {
+            AlertDialog.Builder builder = new AlertDialog.Builder(ReservationDetails.this);
+            builder.setTitle("Table booked");
+            tableNo = result.getContents();
+
+            databaseReference.child("arked").child(location2).child(tableNo).addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    if(snapshot.exists()){
+                        Table table = snapshot.getValue(Table.class);
+                        table.removeBooking();
+                        databaseReference.child("arked").child(location2).child(tableNo).setValue(table);
+                    }
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+
+                }
+            });
+
+            builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int which) {
+                    dialogInterface.dismiss();
+                }
+            }).show();
+        }
+    });
 }
