@@ -16,13 +16,21 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.play.core.integrity.IntegrityTokenRequest;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class LoginActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
+    private FirebaseDatabase firebaseDatabase;
+    private DatabaseReference databaseReference;
     private EditText editTextEmail, editTextPassword;
     private TextView goToRegister;
     private Button loginBtn;
@@ -55,8 +63,11 @@ public class LoginActivity extends AppCompatActivity {
                 String email = editTextEmail.getText().toString().trim();
                 String password = editTextPassword.getText().toString().trim();
 
-                if(email.isEmpty() || password.isEmpty()){
-
+                if(email.isEmpty()){
+                    editTextEmail.setError("Fill in email");
+                }
+                else if(password.isEmpty()){
+                    editTextPassword.setError("Fill in password");
                 }
                 else{
                     signIn(email, password);
@@ -67,7 +78,7 @@ public class LoginActivity extends AppCompatActivity {
         goToRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(LoginActivity.this, StudentRegister.class));
+                startActivity(new Intent(LoginActivity.this, Customer_or_Staff.class));
             }
         });
     }
@@ -92,8 +103,8 @@ public class LoginActivity extends AppCompatActivity {
                 });
     }
 
-    private void updateUI(FirebaseUser user) {
-        if(user != null){
+    private void updateUI(FirebaseUser firebaseUser) {
+        if(firebaseUser != null){
             startActivity(new Intent(LoginActivity.this, MainActivity.class));
         }
         else{

@@ -22,6 +22,7 @@
         android:layout_width="150dp"
         android:layout_height="50dp"
         android:text="Table 1"
+        android:id="@+id/textViewTableNo"
         android:background="@drawable/button_blue"
         android:textColor="@color/white"
         android:textSize="25dp"
@@ -31,33 +32,119 @@
         android:gravity="center"
         android:typeface="serif"/>
 
-    <TextView
-        android:id="@+id/textViewName"
+    <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="60dp"
-        android:layout_marginRight="60dp"
-        android:layout_marginTop="300dp"
-        android:text="Are you sure you want to submit your reservation?"
-        android:textColor="@color/black"
-        android:textSize="25dp"
-        android:textStyle="bold"
-        android:typeface="serif"
-        android:gravity="center_horizontal"/>
+        android:id="@+id/tableArea"
+        android:layout_below="@+id/textViewTableNo">
+        <TextView
+            android:id="@+id/textViewName"
+            android:layout_width="wrap_content"
+            android:layout_height="300dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="20dp"
+            android:text="   Name \n\n   Contact  \n\n   Email \n\n   Arked \n\n   Table \n\n   Time"
+            android:background="@drawable/bg_grey"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:typeface="serif"
+            android:gravity="center_vertical"/>
+
+        <TextView
+            android:layout_width="250dp"
+            android:layout_height="50.5dp"
+            android:id="@+id/name"
+            android:text="-"
+            android:background="@drawable/bg_lightgrey"
+            android:textColor="@color/white"
+            android:textSize="15dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="130dp"
+            android:gravity="center"
+            android:typeface="serif"/>
+
+        <TextView
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/name"
+            android:id="@+id/contact"
+            android:text="-"
+            android:background="@drawable/bg_lightgrey"
+            android:textColor="@color/white"
+            android:textSize="15dp"
+            android:layout_marginLeft="130dp"
+            android:gravity="center"
+            android:typeface="serif"/>
+
+        <TextView
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:id="@+id/email"
+            android:layout_below="@+id/contact"
+            android:text="-"
+            android:background="@drawable/bg_lightgrey"
+            android:textColor="@color/white"
+            android:textSize="15dp"
+            android:layout_marginLeft="130dp"
+            android:gravity="center"
+            android:typeface="serif"/>
+
+        <TextView
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:text="-"
+            android:id="@+id/arked"
+            android:layout_below="@+id/email"
+            android:background="@drawable/bg_lightgrey"
+            android:textColor="@color/white"
+            android:textSize="15dp"
+            android:layout_marginLeft="130dp"
+            android:gravity="center"
+            android:typeface="serif"/>
+
+        <TextView
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:id="@+id/table"
+            android:layout_below="@+id/arked"
+            android:text="-"
+            android:background="@drawable/bg_lightgrey"
+            android:textColor="@color/white"
+            android:textSize="15dp"
+            android:layout_marginLeft="130dp"
+            android:gravity="center"
+            android:typeface="serif"/>
+
+        <TextView
+            android:layout_width="250dp"
+            android:layout_height="50.5dp"
+            android:id="@+id/time"
+            android:layout_below="@id/table"
+            android:text="-"
+            android:background="@drawable/bg_lightgrey"
+            android:textColor="@color/white"
+            android:textSize="15dp"
+            android:layout_marginLeft="130dp"
+            android:gravity="center"
+            android:typeface="serif"/>
+    </RelativeLayout>
+
+
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_marginTop="130dp"
-        android:gravity="center">
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:layout_below="@+id/tableArea">
 
         <Button
             android:id="@+id/back4"
             android:layout_width="130dp"
             android:layout_height="50dp"
             android:text="Back"
-            android:layout_marginTop="400dp"
             android:layout_marginLeft="0dp"
             android:textSize="20sp"
             android:textColor="@color/white"
@@ -68,7 +155,6 @@
             android:layout_width="130dp"
             android:layout_height="50dp"
             android:text="Submit"
-            android:layout_marginTop="400dp"
             android:layout_marginLeft="180dp"
             android:textSize="20sp"
             android:textColor="@color/white"
