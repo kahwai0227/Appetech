@@ -12,7 +12,9 @@ public class Table{
     public String location;
     public String bookingTime;
     public String bookingUserContact;
-    public Integer tableOccupied;
+    public Boolean tableOccupied;
+    public Long timeStamp;
+    public Boolean check_in;
 
     public Table(){
     }
@@ -37,6 +39,12 @@ public class Table{
     public void addBookingUserContact(String bookingUserContact){
         this.bookingUserContact = bookingUserContact;
     }
+    public void addTimeStamp(Long timeStamp){
+
+    }
+    public void addCheckIn(Boolean check_in){
+        this.check_in = check_in;
+    }
 
     public String getTableNo() { return tableNo; }
     public String getLocation() { return location; }
@@ -45,12 +53,15 @@ public class Table{
     public String getBookingTime() { return bookingTime; }
     public String getBookingUserContact() { return bookingUserContact; }
     public String getBookingUsername() { return bookingUsername; }
-    public Integer getTableOccupied() { return tableOccupied; }
+    public Boolean getTableOccupied() { return tableOccupied; }
+    public Boolean getCheck_in() { return check_in; }
+
     public void removeBooking(){
         this.bookingUsername = null;
         this.bookingUserContact = null;
         this.bookingUserEmail = null;
         this.bookingTime = null;
         this.tableBooked = false;
+        this.check_in = false;
     }
 }
