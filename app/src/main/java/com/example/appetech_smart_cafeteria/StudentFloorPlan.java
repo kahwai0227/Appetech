@@ -180,7 +180,7 @@ public class StudentFloorPlan extends AppCompatActivity {
                 Log.d("DEBUG", "tableBooked = " + data.getTableBooked());
                 Log.d("DEBUG", "tableOccupied = " + data.getTableOccupied());
                 if(data.getTableBooked() != null && data.getTableOccupied() != null){
-                    if(data.getTableOccupied() == 1 || data.getTableBooked()){
+                    if(data.getTableOccupied() || data.getTableBooked()){
                         button.setBackgroundColor(Color.RED);
                         switch(tableNo){
                             case "Table 1":

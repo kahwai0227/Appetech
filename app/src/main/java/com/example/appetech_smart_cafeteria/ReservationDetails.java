@@ -30,15 +30,14 @@ public class ReservationDetails extends AppCompatActivity {
 
     Button buttonC;
 
-    String location2, tableNo;
+    String tableNo;
 
 
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference databaseReference;
     private FirebaseUser firebaseUser;
     private TextView name, contact, email, arked, bookTable, bookTime;
-    private String location;
-
+    private String location, uid;
 
     @Override
     protected  void onStart(){
@@ -62,7 +61,7 @@ public class ReservationDetails extends AppCompatActivity {
         databaseReference = firebaseDatabase.getReference();
 
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
-        String uid = firebaseUser.getUid();
+        uid = firebaseUser.getUid();
 
         name = findViewById(R.id.name);
         contact = findViewById(R.id.contact);
@@ -105,7 +104,6 @@ public class ReservationDetails extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(ReservationDetails.this, MainActivity.class);
-                intent.putExtra("location", location);
                 startActivity(intent);
                 finish();
             }
@@ -142,16 +140,32 @@ public class ReservationDetails extends AppCompatActivity {
         if (result.getContents() !=null)
         {
             AlertDialog.Builder builder = new AlertDialog.Builder(ReservationDetails.this);
-            builder.setTitle("Table booked");
+            builder.setTitle("Check In Status");
             tableNo = result.getContents();
+            builder.setMessage("Checked in " + tableNo);
 
-            databaseReference.child("arked").child(location2).child(tableNo).addListenerForSingleValueEvent(new ValueEventListener() {
+
+            databaseReference.child("users").child(uid).addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
                     if(snapshot.exists()){
-                        Table table = snapshot.getValue(Table.class);
-                        table.removeBooking();
-                        databaseReference.child("arked").child(location2).child(tableNo).setValue(table);
+                        User user = snapshot.getValue(User.class);
+                        if(user != null && user.getBooking() != null){
+                            Table table = user.getBooking();
+                            String bookingTableNo = table.getTableNo();
+                            String bookingTableLocation = table.getLocation();
+                            if(bookingTableNo.equals(tableNo) && bookingTableLocation.equals(location)){
+                                table.addCheckIn(true);
+                                user.addBooking(null);
+                                databaseReference.child("arked").child(location).child(tableNo).setValue(table);
+                                databaseReference.child("users").child(uid).setValue(user);
+                                Toast.makeText(ReservationDetails.this, "Check in successfully", Toast.LENGTH_SHORT).show();
+                                startActivity(new Intent(ReservationDetails.this, MainActivity.class));
+                            }
+                            else{
+                                Toast.makeText(ReservationDetails.this, "wrong table, please check your booking", Toast.LENGTH_SHORT).show();
+                            }
+                        }
                     }
                 }
 
