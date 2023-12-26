@@ -2,6 +2,7 @@ package com.example.appetech_smart_cafeteria;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -38,6 +39,7 @@ public class ReservationDetails extends AppCompatActivity {
     private FirebaseUser firebaseUser;
     private TextView name, contact, email, arked, bookTable, bookTime;
     private String location, uid;
+    private String checkTableNo, checkTableLocation;
 
     @Override
     protected  void onStart(){
@@ -77,9 +79,9 @@ public class ReservationDetails extends AppCompatActivity {
                     User user = snapshot.getValue(User.class);
                     if(user != null && user.getBooking() != null){
                         Table table = user.getBooking();
-                        name.setText(table.getBookingUsername());
+                        name.setText(user.getUsername());
                         contact.setText(table.getBookingUserContact());
-                        email.setText(table.getBookingUserEmail());
+                        email.setText(user.getEmail());
                         arked.setText(table.getLocation());
                         bookTable.setText(table.getTableNo());
                         bookTime.setText(table.getBookingTime());
@@ -139,11 +141,11 @@ public class ReservationDetails extends AppCompatActivity {
     {
         if (result.getContents() !=null)
         {
-            AlertDialog.Builder builder = new AlertDialog.Builder(ReservationDetails.this);
-            builder.setTitle("Check In Status");
-            tableNo = result.getContents();
-            builder.setMessage("Checked in " + tableNo);
-
+            String qrContent = result.getContents();
+            String[] qrContents = qrContent.split(",");
+            checkTableNo = qrContents[0];
+            checkTableLocation = qrContents[1];
+            Log.d("QR", "TableNo=" + checkTableNo + " Location=" + checkTableLocation);
 
             databaseReference.child("users").child(uid).addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
@@ -152,14 +154,15 @@ public class ReservationDetails extends AppCompatActivity {
                         User user = snapshot.getValue(User.class);
                         if(user != null && user.getBooking() != null){
                             Table table = user.getBooking();
-                            String bookingTableNo = table.getTableNo();
-                            String bookingTableLocation = table.getLocation();
-                            if(bookingTableNo.equals(tableNo) && bookingTableLocation.equals(location)){
-                                table.addCheckIn(true);
+                            String bookTableNo = table.getTableNo();
+                            String bookTableLocation = table.getLocation();
+                            Log.d("BOOK", "TableNo=" + bookTableNo + " Location=" + bookTableLocation);
+                            if(bookTableNo.equals(checkTableNo) && bookTableLocation.equals(checkTableLocation)){
                                 user.addBooking(null);
-                                databaseReference.child("arked").child(location).child(tableNo).setValue(table);
+                                table.removeBooking();
+                                databaseReference.child("arked").child(bookTableLocation).child(bookTableNo).setValue(table);
                                 databaseReference.child("users").child(uid).setValue(user);
-                                Toast.makeText(ReservationDetails.this, "Check in successfully", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(ReservationDetails.this, "Check in successfully, enjoy your seat", Toast.LENGTH_SHORT).show();
                                 startActivity(new Intent(ReservationDetails.this, MainActivity.class));
                             }
                             else{
@@ -174,13 +177,6 @@ public class ReservationDetails extends AppCompatActivity {
 
                 }
             });
-
-            builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialogInterface, int which) {
-                    dialogInterface.dismiss();
-                }
-            }).show();
         }
     });
 }

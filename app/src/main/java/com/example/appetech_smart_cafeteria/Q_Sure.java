@@ -115,8 +115,7 @@ public class Q_Sure extends AppCompatActivity {
                 table.addLocation(arked.getText().toString().trim());
                 table.addBookingTime(bookTime.getText().toString().trim());
                 table.addBooking(true);
-                table.addBookingUserEmail(email.getText().toString().trim());
-                table.addBookingUsername(name.getText().toString());
+                table.addBookingUID(uid);
                 table.addBookingUserContact(contact.getText().toString().trim());
                 table.addTableNo(bookTable.getText().toString().trim());
                 user.addBooking(table);
