@@ -28,7 +28,7 @@ public class Q_Sure extends AppCompatActivity {
     private DatabaseReference databaseReference;
     private Button buttonB;
     private Button buttonS;
-    private TextView textViewTableNo, name, contact, email, arked, bookTable, bookTime;
+    private TextView textViewTableNo, name, contact, email, arked, bookTable, bookTime, bookDate;
     User user;
     @Override
     protected  void onStart(){
@@ -53,6 +53,7 @@ public class Q_Sure extends AppCompatActivity {
         arked = findViewById(R.id.arked);
         bookTable = findViewById(R.id.table);
         bookTime = findViewById(R.id.time);
+        bookDate = findViewById(R.id.date);
 
         Intent intent = getIntent();
 
@@ -62,12 +63,14 @@ public class Q_Sure extends AppCompatActivity {
             String time = intent.getStringExtra("time");
             String hp = intent.getStringExtra("hp");
             String location = intent.getStringExtra("location");
+            String date = intent.getStringExtra("date");
 
             contact.setText(hp);
             bookTable.setText(tableNo);
             textViewTableNo.setText(tableNo);
             arked.setText(location);
             bookTime.setText(time);
+            bookDate.setText(date);
         }
 
         FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
@@ -118,6 +121,7 @@ public class Q_Sure extends AppCompatActivity {
                 table.addBookingUID(uid);
                 table.addBookingUserContact(contact.getText().toString().trim());
                 table.addTableNo(bookTable.getText().toString().trim());
+                table.addBookingDate(bookDate.getText().toString().trim());
                 user.addBooking(table);
 
                 databaseReference.child("users").child(uid).setValue(user);

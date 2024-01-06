@@ -39,7 +39,7 @@
         android:textColor="@color/black"
         android:textSize="25dp"
         android:textStyle="bold"
-        android:layout_marginTop="280dp"
+        android:layout_marginTop="300dp"
         android:layout_marginLeft="25dp"
         android:typeface="serif"/>
 
@@ -47,7 +47,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="150dp"
-        android:layout_marginTop="272dp"
+        android:layout_marginTop="280dp"
         android:id="@+id/editTextHp"
         android:ems="8"
         android:hint="phone no."
@@ -68,15 +68,34 @@
         android:layout_marginLeft="25dp"
         android:typeface="serif"/>
 
-    <Button
-        android:id="@+id/timebutton"
+    <TextView
+        android:id="@+id/timetext"
         android:onClick="popTimePicker"
+        android:textSize="25dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Select time"
-        android:layout_marginTop="390dp"
-        android:layout_marginLeft="220dp"/>
+        android:layout_marginTop="400dp"
+        android:layout_marginLeft="150dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Date"
+        android:textColor="@color/black"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:layout_marginTop="350dp"
+        android:layout_marginLeft="25dp"
+        android:typeface="serif"/>
 
+    <TextView
+        android:id="@+id/datetext"
+        android:textSize="25dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select date"
+        android:layout_marginTop="350dp"
+        android:layout_marginLeft="150dp"/>
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

@@ -31,10 +31,10 @@
         <TextView
             android:id="@+id/textViewName"
             android:layout_width="wrap_content"
-            android:layout_height="300dp"
+            android:layout_height="350dp"
             android:layout_marginLeft="25dp"
             android:layout_marginTop="20dp"
-            android:text="   Name \n\n   Contact  \n\n   Email \n\n   Arked \n\n   Table \n\n   Time"
+            android:text="   Name \n\n   Contact  \n\n   Email \n\n   Arked \n\n   Table \n\n   Time \n\n   Date"
             android:background="@drawable/bg_grey"
             android:textColor="@color/white"
             android:textSize="20dp"
@@ -119,6 +119,19 @@
             android:layout_marginLeft="130dp"
             android:gravity="center"
             android:typeface="serif"/>
+        <TextView
+            android:layout_width="250dp"
+            android:layout_height="50.5dp"
+            android:id="@+id/date"
+            android:layout_below="@id/time"
+            android:text="-"
+            android:background="@drawable/bg_lightgrey"
+            android:textColor="@color/white"
+            android:textSize="15dp"
+            android:layout_marginLeft="130dp"
+            android:gravity="center"
+            android:typeface="serif"/>
+
     </RelativeLayout>
 
 
@@ -135,7 +148,7 @@
             android:layout_width="130dp"
             android:layout_height="50dp"
             android:text="Back"
-            android:layout_marginTop="450dp"
+            android:layout_marginTop="500dp"
             android:layout_marginLeft="0dp"
             android:textSize="20sp"
             android:textColor="@color/white"
@@ -146,7 +159,7 @@
             android:layout_width="130dp"
             android:layout_height="50dp"
             android:text="Delete"
-            android:layout_marginTop="450dp"
+            android:layout_marginTop="500dp"
             android:layout_marginLeft="180dp"
             android:textSize="20sp"
             android:textColor="@color/white"
@@ -157,7 +170,7 @@
             android:layout_width="150dp"
             android:layout_height="50dp"
             android:text="Checkin"
-            android:layout_marginTop="550dp"
+            android:layout_marginTop="600dp"
             android:layout_marginLeft="80dp"
             android:textSize="20sp"
             android:textColor="@color/white"

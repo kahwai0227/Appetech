@@ -28,17 +28,12 @@ public class ReservationDetails extends AppCompatActivity {
 
     private Button buttonB;
     private Button buttonD;
-
     Button buttonC;
-
-    String tableNo;
-
-
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference databaseReference;
     private FirebaseUser firebaseUser;
-    private TextView name, contact, email, arked, bookTable, bookTime;
-    private String location, uid;
+    private TextView name, contact, email, arked, bookTable, bookTime, bookDate;
+    private String uid;
     private String checkTableNo, checkTableLocation;
 
     @Override
@@ -71,6 +66,7 @@ public class ReservationDetails extends AppCompatActivity {
         arked = findViewById(R.id.arked);
         bookTable = findViewById(R.id.table);
         bookTime = findViewById(R.id.time);
+        bookDate = findViewById(R.id.date);
 
         databaseReference.child("users").child(uid).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -85,7 +81,7 @@ public class ReservationDetails extends AppCompatActivity {
                         arked.setText(table.getLocation());
                         bookTable.setText(table.getTableNo());
                         bookTime.setText(table.getBookingTime());
-                        location = table.getLocation();
+                        bookDate.setText(table.getBookingDate());
                     }
                     else{
                         Toast.makeText(ReservationDetails.this, "No current booking", Toast.LENGTH_SHORT).show();

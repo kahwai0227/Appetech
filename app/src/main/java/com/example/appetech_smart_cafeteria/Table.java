@@ -12,6 +12,7 @@ public class Table{
     public String bookingTime;
     public String bookingUserContact;
     public Boolean tableOccupied;
+    public String bookingDate;
 
     public Table(){
     }
@@ -29,6 +30,7 @@ public class Table{
     }
     public void addBookingUserContact(String bookingUserContact){ this.bookingUserContact = bookingUserContact; }
     public void addBookingUID(String bookingUID){ this.bookingUID = bookingUID; }
+    public void addBookingDate(String bookingDate){ this.bookingDate = bookingDate; }
 
     public String getTableNo() { return tableNo; }
     public String getLocation() { return location; }
@@ -36,11 +38,13 @@ public class Table{
     public String getBookingTime() { return bookingTime; }
     public String getBookingUserContact() { return bookingUserContact; }
     public Boolean getTableOccupied() { return tableOccupied; }
+    public String getBookingDate() { return bookingDate; }
 
     public void removeBooking(){
         this.bookingUID = null;
         this.bookingUserContact = null;
         this.bookingTime = null;
+        this.bookingDate = null;
         this.tableBooked = false;
     }
 }
