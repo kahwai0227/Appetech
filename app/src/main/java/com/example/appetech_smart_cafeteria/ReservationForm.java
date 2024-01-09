@@ -68,7 +68,7 @@ public class ReservationForm extends AppCompatActivity {
 
         // Format the time using SimpleDateFormat
         SimpleDateFormat timeformat = new SimpleDateFormat("HH:mm", Locale.getDefault());
-        SimpleDateFormat dateFormat = new SimpleDateFormat("dd-mm-yyyy", Locale.getDefault());
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault());
         String formattedTime = timeformat.format(currentTime);
         String formattedDate = dateFormat.format(currentTime);
 

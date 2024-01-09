@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".success_book">
+    tools:context=".success_book"
+    android:layout_centerHorizontal="true">
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -33,23 +34,24 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="60dp"
+        android:layout_centerHorizontal="true"
         android:layout_marginRight="60dp"
         android:layout_marginTop="250dp"
-        android:text="\nYour reservation has been submitted successfully\n"
+        android:padding="10dp"
+        android:text="Your reservation has been submitted successfully\n Please check in within 2 minutes"
         android:background="@drawable/bg_lightgreen"
         android:textColor="@color/black"
         android:textSize="25dp"
         android:textStyle="bold"
         android:typeface="serif"
-        android:gravity="center_horizontal"/>
+        android:gravity="center"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="120dp"
         android:layout_marginRight="60dp"
         android:layout_marginTop="430dp"
+        android:layout_centerHorizontal="true"
         android:text="THANK YOU !!"
         android:textColor="@color/black"
         android:textSize="25dp"
